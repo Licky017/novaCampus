@@ -1,0 +1,1 @@
+import{j as t}from"./index-C01OW1SB.js";import"./vendor-LP6iAtn_.js";import{P as s}from"./PageScaffold-CSi5dIcw.js";import"./ui-Da7VRwnJ.js";function r(){return t.jsx(s,{title:"Class Detail",description:"Class roster, subjects, and attendance.",icon:"bi-building"})}export{r as default};

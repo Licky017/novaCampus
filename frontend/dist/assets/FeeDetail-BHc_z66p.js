@@ -1,0 +1,1 @@
+import{j as e}from"./index-C01OW1SB.js";import"./vendor-LP6iAtn_.js";import{P as t}from"./PageScaffold-CSi5dIcw.js";import"./ui-Da7VRwnJ.js";function s(){return e.jsx(t,{title:"Fee Detail",description:"Payment details and fee history.",icon:"bi-receipt"})}export{s as default};

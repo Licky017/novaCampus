@@ -1,0 +1,1 @@
+import{j as e}from"./index-C01OW1SB.js";import"./vendor-LP6iAtn_.js";import{P as r}from"./PageScaffold-CSi5dIcw.js";import"./ui-Da7VRwnJ.js";function s(){return e.jsx(r,{title:"Teachers",description:"Teacher records will appear here.",icon:"bi-person-badge"})}export{s as default};

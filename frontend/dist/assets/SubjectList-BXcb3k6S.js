@@ -1,0 +1,1 @@
+import{j as t}from"./index-C01OW1SB.js";import"./vendor-LP6iAtn_.js";import{P as i}from"./PageScaffold-CSi5dIcw.js";import"./ui-Da7VRwnJ.js";function u(){return t.jsx(i,{title:"Subjects",description:"Subjects and curriculum assignments.",icon:"bi-book"})}export{u as default};

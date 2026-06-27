@@ -1,0 +1,47 @@
+/* frontend/src/styles/dark-mode.css
+   Purpose: Dark mode token overrides. ThemeContext toggles
+   data-theme="dark" on <html>. All colours flip via CSS variables.
+   Sidebar stays dark navy in both modes. */
+
+[data-theme='dark'] {
+  --bg-page:          #0F172A;
+  --bg-card:          #1E293B;
+  --bg-input:         #1E293B;
+  --text-primary:     #F1F5F9;
+  --text-secondary:   #94A3B8;
+  --text-muted:       #64748B;
+  --border-color:     #334155;
+
+  /* Sidebar intentionally stays dark in both modes */
+  --bg-sidebar:       #1E3A5F;
+  --bg-sidebar-hover: #172554;
+
+  /* Bootstrap component surfaces */
+  --bs-body-bg:    #0F172A;
+  --bs-body-color: #F1F5F9;
+}
+
+/* Smooth transition for all colour/bg properties */
+*, *::before, *::after {
+  transition: background-color var(--transition-base), 
+              border-color var(--transition-base),
+              color var(--transition-base);
+}
+
+/* Exceptions — don't animate things that shouldn't flicker */
+.btn, .badge-status, .btn-spinner { transition: none; }
+
+/* Dark mode table rows */
+[data-theme='dark'] .sms-table tbody tr:nth-child(even) {
+  background-color: rgba(255,255,255,0.02);
+}
+[data-theme='dark'] .sms-table tbody tr:hover {
+  background-color: rgba(59,130,246,0.07);
+}
+
+/* Dark mode badge text adjustments for contrast */
+[data-theme='dark'] .badge-success { color: #4ADE80; }
+[data-theme='dark'] .badge-warning { color: #FCD34D; }
+[data-theme='dark'] .badge-danger  { color: #FCA5A5; }
+[data-theme='dark'] .badge-primary { color: #93C5FD; }
+[data-theme='dark'] .badge-muted   { color: #94A3B8; }

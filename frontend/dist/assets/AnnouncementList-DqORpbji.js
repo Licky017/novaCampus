@@ -1,0 +1,1 @@
+import{j as n}from"./index-C01OW1SB.js";import"./vendor-LP6iAtn_.js";import{P as e}from"./PageScaffold-CSi5dIcw.js";import"./ui-Da7VRwnJ.js";function m(){return n.jsx(e,{title:"Announcements",description:"School announcements will appear here.",icon:"bi-megaphone"})}export{m as default};

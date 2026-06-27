@@ -1,0 +1,1 @@
+import{j as r}from"./index-C01OW1SB.js";import"./vendor-LP6iAtn_.js";import{P as t}from"./PageScaffold-CSi5dIcw.js";import"./ui-Da7VRwnJ.js";function p(){return r.jsx(t,{title:"Grade Report",description:"Grade summaries and report cards.",icon:"bi-clipboard-data"})}export{p as default};

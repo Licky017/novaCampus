@@ -1,0 +1,1 @@
+import{j as s}from"./index-C01OW1SB.js";import"./vendor-LP6iAtn_.js";import{P as i}from"./PageScaffold-CSi5dIcw.js";import"./ui-Da7VRwnJ.js";function a(){return s.jsx(i,{title:"Classes",description:"Class sections and schedules will appear here.",icon:"bi-building"})}export{a as default};

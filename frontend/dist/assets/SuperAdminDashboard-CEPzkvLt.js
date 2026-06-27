@@ -1,0 +1,1 @@
+import{j as o}from"./index-C01OW1SB.js";import"./vendor-LP6iAtn_.js";import{P as r}from"./PageScaffold-CSi5dIcw.js";import"./ui-Da7VRwnJ.js";function a(){return o.jsx(r,{title:"Dashboard",description:"Overview for school administrators.",icon:"bi-speedometer2"})}export{a as default};

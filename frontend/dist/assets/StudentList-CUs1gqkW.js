@@ -1,0 +1,1 @@
+import{j as t}from"./index-C01OW1SB.js";import"./vendor-LP6iAtn_.js";import{P as r}from"./PageScaffold-CSi5dIcw.js";import"./ui-Da7VRwnJ.js";function s(){return t.jsx(r,{title:"Students",description:"Student records will appear here.",icon:"bi-mortarboard"})}export{s as default};

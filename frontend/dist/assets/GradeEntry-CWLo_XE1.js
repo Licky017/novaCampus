@@ -1,0 +1,1 @@
+import{j as r}from"./index-C01OW1SB.js";import"./vendor-LP6iAtn_.js";import{P as t}from"./PageScaffold-CSi5dIcw.js";import"./ui-Da7VRwnJ.js";function n(){return r.jsx(t,{title:"Grade Entry",description:"Grade entry tools will appear here.",icon:"bi-bar-chart"})}export{n as default};

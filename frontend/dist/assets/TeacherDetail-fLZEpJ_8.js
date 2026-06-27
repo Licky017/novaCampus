@@ -1,0 +1,1 @@
+import{j as e}from"./index-C01OW1SB.js";import"./vendor-LP6iAtn_.js";import{P as i}from"./PageScaffold-CSi5dIcw.js";import"./ui-Da7VRwnJ.js";function s(){return e.jsx(i,{title:"Teacher Detail",description:"Teacher profile and assigned classes.",icon:"bi-person-lines-fill"})}export{s as default};

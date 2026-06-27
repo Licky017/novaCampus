@@ -1,0 +1,1 @@
+import{j as a}from"./index-C01OW1SB.js";import"./vendor-LP6iAtn_.js";import{P as e}from"./PageScaffold-CSi5dIcw.js";import"./ui-Da7VRwnJ.js";function n(){return a.jsx(e,{title:"Teacher Dashboard",description:"Classes, attendance, grades, and announcements.",icon:"bi-person-badge"})}export{n as default};

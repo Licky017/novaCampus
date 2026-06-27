@@ -1,0 +1,1 @@
+import{j as o}from"./index-C01OW1SB.js";import"./vendor-LP6iAtn_.js";import{P as n}from"./PageScaffold-CSi5dIcw.js";import"./ui-Da7VRwnJ.js";function m(){return o.jsx(n,{title:"Announcement Form",description:"Create or edit school announcements.",icon:"bi-pencil-square"})}export{m as default};

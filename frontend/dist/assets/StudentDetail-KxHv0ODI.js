@@ -1,0 +1,1 @@
+import{j as t}from"./index-C01OW1SB.js";import"./vendor-LP6iAtn_.js";import{P as i}from"./PageScaffold-CSi5dIcw.js";import"./ui-Da7VRwnJ.js";function a(){return t.jsx(i,{title:"Student Detail",description:"Student profile and academic history.",icon:"bi-person-lines-fill"})}export{a as default};

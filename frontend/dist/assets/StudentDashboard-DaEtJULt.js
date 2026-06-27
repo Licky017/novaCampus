@@ -1,0 +1,1 @@
+import{j as t}from"./index-C01OW1SB.js";import"./vendor-LP6iAtn_.js";import{P as o}from"./PageScaffold-CSi5dIcw.js";import"./ui-Da7VRwnJ.js";function d(){return t.jsx(o,{title:"Student Dashboard",description:"Your attendance, grades, fees, and school updates.",icon:"bi-mortarboard"})}export{d as default};

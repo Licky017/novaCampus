@@ -1,0 +1,1 @@
+import{j as t}from"./index-C01OW1SB.js";import"./vendor-LP6iAtn_.js";import{P as e}from"./PageScaffold-CSi5dIcw.js";import"./ui-Da7VRwnJ.js";function i(){return t.jsx(e,{title:"Attendance Report",description:"Attendance summaries and history.",icon:"bi-calendar-week"})}export{i as default};
