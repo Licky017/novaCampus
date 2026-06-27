@@ -57,7 +57,6 @@ export default function App() {
 
             {/* ── Auth (public) ── */}
             <Route element={<AuthLayout />}>
-              <Route path="/register"        element={<Register />} />
               <Route path="/login"           element={<Login />} />
               <Route path="/forgot-password" element={<ForgotPassword />} />
               <Route path="/reset-password"  element={<ResetPassword />} />
@@ -168,6 +167,11 @@ export default function App() {
 
               {/* Profile */}
               <Route path="profile" element={<Profile />} />
+              <Route path="register-user" element={
+                <ProtectedRoute roles={['superadmin']}>
+                  <Register />
+                </ProtectedRoute>
+              } />
             </Route>
 
             {/* Catch-all */}

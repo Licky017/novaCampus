@@ -22,7 +22,6 @@ const subjectSchema = new mongoose.Schema(
     description: { type: String, trim: true },
     credits: { type: Number, default: 1, min: 0 },
     isElective: { type: Boolean, default: false },
-    school: { type: mongoose.Schema.Types.ObjectId, ref: 'School' },
   },
   { timestamps: true }
 );

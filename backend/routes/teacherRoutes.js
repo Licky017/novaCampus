@@ -1,7 +1,7 @@
 /**
  * @file routes/teacherRoutes.js
  * @description Defines /api/teachers/* endpoints. Create/update/delete
- * restricted to admins; list/detail accessible to all authenticated roles.
+ * restricted to superadmin; list/detail accessible to all authenticated roles.
  * @dependencies express, express-validator, ../controllers/teacherController,
  *               ../middleware/authMiddleware, ../middleware/roleMiddleware, ../middleware/validate
  */
@@ -28,7 +28,7 @@ router.get('/', getTeachers);
 
 router.post(
   '/',
-  authorize('superadmin', 'schooladmin'),
+  authorize('superadmin'),
   [
     body('name').trim().isLength({ min: 2, max: 100 }).withMessage('Name must be 2-100 characters'),
     body('email').isEmail().withMessage('A valid email is required'),
@@ -39,8 +39,8 @@ router.post(
 );
 
 router.get('/:id', getTeacherById);
-router.put('/:id', authorize('superadmin', 'schooladmin'), updateTeacher);
-router.delete('/:id', authorize('superadmin', 'schooladmin'), deleteTeacher);
+router.put('/:id', authorize('superadmin'), updateTeacher);
+router.delete('/:id', authorize('superadmin'), deleteTeacher);
 router.get('/:id/classes', getTeacherClasses);
 
 module.exports = router;

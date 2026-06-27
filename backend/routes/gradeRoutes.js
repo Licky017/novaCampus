@@ -29,7 +29,7 @@ router.get('/', getGrades);
 
 router.post(
   '/',
-  authorize('superadmin', 'schooladmin', 'teacher'),
+  authorize('superadmin', 'teacher'),
   [
     body('student').notEmpty().withMessage('Student is required'),
     body('subject').notEmpty().withMessage('Subject is required'),
@@ -43,8 +43,8 @@ router.post(
   createGrade
 );
 
-router.put('/:id', authorize('superadmin', 'schooladmin', 'teacher'), updateGrade);
-router.delete('/:id', authorize('superadmin', 'schooladmin', 'teacher'), deleteGrade);
+router.put('/:id', authorize('superadmin', 'teacher'), updateGrade);
+router.delete('/:id', authorize('superadmin', 'teacher'), deleteGrade);
 router.get('/report/:studentId', getStudentReport);
 router.get('/class/:classId', getClassReport);
 

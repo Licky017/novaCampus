@@ -32,7 +32,6 @@ const gradeRoutes = require('./routes/gradeRoutes');
 const feeRoutes = require('./routes/feeRoutes');
 const announcementRoutes = require('./routes/announcementRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes');
-const schoolRoutes = require('./routes/schoolRoutes');
 
 const app = express();
 
@@ -86,7 +85,6 @@ app.use('/api/grades', gradeRoutes);
 app.use('/api/fees', feeRoutes);
 app.use('/api/announcements', announcementRoutes);
 app.use('/api/dashboard', dashboardRoutes);
-app.use('/api/schools', schoolRoutes);
 
 // --- 404 + global error handler (must be registered last) ---
 app.use(notFound);

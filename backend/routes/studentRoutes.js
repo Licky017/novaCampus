@@ -2,7 +2,7 @@
  * @file routes/studentRoutes.js
  * @description Defines /api/students/* endpoints. List/detail accessible to
  * all authenticated roles (controllers/services can be extended to scope
- * student/teacher visibility further); create/update/delete restricted to admins.
+ * student/teacher visibility further); create/update/delete restricted to superadmin.
  * @dependencies express, express-validator, ../controllers/studentController,
  *               ../middleware/authMiddleware, ../middleware/roleMiddleware, ../middleware/validate
  */
@@ -31,7 +31,7 @@ router.get('/', getStudents);
 
 router.post(
   '/',
-  authorize('superadmin', 'schooladmin'),
+  authorize('superadmin'),
   [
     body('name').trim().isLength({ min: 2, max: 100 }).withMessage('Name must be 2-100 characters'),
     body('email').isEmail().withMessage('A valid email is required'),
@@ -44,8 +44,8 @@ router.post(
 );
 
 router.get('/:id', getStudentById);
-router.put('/:id', authorize('superadmin', 'schooladmin'), updateStudent);
-router.delete('/:id', authorize('superadmin', 'schooladmin'), deleteStudent);
+router.put('/:id', authorize('superadmin'), updateStudent);
+router.delete('/:id', authorize('superadmin'), deleteStudent);
 
 router.get('/:id/grades', getStudentGrades);
 router.get('/:id/attendance', getStudentAttendance);

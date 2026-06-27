@@ -31,7 +31,7 @@ router.get('/summary', getSummary);
 
 router.post(
   '/mark',
-  authorize('superadmin', 'schooladmin', 'teacher'),
+  authorize('superadmin', 'teacher'),
   [
     body('classId').notEmpty().withMessage('Class is required'),
     body('date').isISO8601().withMessage('A valid date is required'),
@@ -41,7 +41,7 @@ router.post(
   markAttendance
 );
 
-router.put('/:id', authorize('superadmin', 'schooladmin', 'teacher'), updateAttendance);
+router.put('/:id', authorize('superadmin', 'teacher'), updateAttendance);
 router.get('/report/:studentId', getStudentReport);
 router.get('/class/:classId', getClassAttendance);
 

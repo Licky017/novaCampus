@@ -35,12 +35,11 @@ const userSchema = new mongoose.Schema(
     role: {
       type: String,
       enum: {
-        values: ['superadmin', 'schooladmin', 'teacher', 'student'],
-        message: 'Role must be one of: superadmin, schooladmin, teacher, student',
+        values: ['superadmin', 'teacher', 'student'],
+        message: 'Role must be one of: superadmin, teacher, student',
       },
       required: [true, 'Role is required'],
     },
-    school: { type: mongoose.Schema.Types.ObjectId, ref: 'School' },
     avatar: { type: String, default: '' },
     phone: {
       type: String,

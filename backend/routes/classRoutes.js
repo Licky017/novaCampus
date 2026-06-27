@@ -2,7 +2,7 @@
  * @file routes/classRoutes.js
  * @description Defines /api/classes/* endpoints, including the roster
  * lookup and the nested "add subject to class" route. Create/update/delete
- * restricted to superadmin and schooladmin.
+ * restricted to superadmin.
  * @dependencies express, express-validator, ../controllers/classController,
  *               ../middleware/authMiddleware, ../middleware/roleMiddleware, ../middleware/validate
  */
@@ -30,7 +30,7 @@ router.get('/', getClasses);
 
 router.post(
   '/',
-  authorize('superadmin', 'schooladmin'),
+  authorize('superadmin'),
   [
     body('name').trim().notEmpty().withMessage('Class name is required'),
     body('grade').isInt({ min: 1, max: 12 }).withMessage('Grade must be between 1 and 12'),
@@ -40,13 +40,13 @@ router.post(
 );
 
 router.get('/:id', getClassById);
-router.put('/:id', authorize('superadmin', 'schooladmin'), updateClass);
-router.delete('/:id', authorize('superadmin', 'schooladmin'), deleteClass);
+router.put('/:id', authorize('superadmin'), updateClass);
+router.delete('/:id', authorize('superadmin'), deleteClass);
 router.get('/:id/students', getClassStudents);
 
 router.post(
   '/:id/subjects',
-  authorize('superadmin', 'schooladmin'),
+  authorize('superadmin'),
   [
     body('name').trim().notEmpty().withMessage('Subject name is required'),
     body('code').trim().notEmpty().withMessage('Subject code is required'),

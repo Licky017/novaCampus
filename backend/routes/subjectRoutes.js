@@ -2,7 +2,7 @@
  * @file routes/subjectRoutes.js
  * @description Defines /api/subjects/* endpoints for direct subject CRUD
  * (independent of the nested POST /api/classes/:id/subjects route).
- * Create/update/delete restricted to superadmin and schooladmin.
+ * Create/update/delete restricted to superadmin.
  * @dependencies express, express-validator, ../controllers/subjectController,
  *               ../middleware/authMiddleware, ../middleware/roleMiddleware, ../middleware/validate
  */
@@ -28,7 +28,7 @@ router.get('/', getSubjects);
 
 router.post(
   '/',
-  authorize('superadmin', 'schooladmin'),
+  authorize('superadmin'),
   [
     body('name').trim().notEmpty().withMessage('Subject name is required'),
     body('code').trim().notEmpty().withMessage('Subject code is required'),
@@ -38,7 +38,7 @@ router.post(
 );
 
 router.get('/:id', getSubjectById);
-router.put('/:id', authorize('superadmin', 'schooladmin'), updateSubject);
-router.delete('/:id', authorize('superadmin', 'schooladmin'), deleteSubject);
+router.put('/:id', authorize('superadmin'), updateSubject);
+router.delete('/:id', authorize('superadmin'), deleteSubject);
 
 module.exports = router;

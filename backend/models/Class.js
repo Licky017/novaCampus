@@ -23,7 +23,6 @@ const classSchema = new mongoose.Schema(
     academicYear: { type: String, trim: true, default: () => `${new Date().getFullYear()}-${new Date().getFullYear() + 1}` },
     capacity: { type: Number, default: 40 },
     room: { type: String, trim: true },
-    school: { type: mongoose.Schema.Types.ObjectId, ref: 'School' },
   },
   { timestamps: true }
 );

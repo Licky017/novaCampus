@@ -29,7 +29,7 @@ router.get('/', getAnnouncements);
 
 router.post(
   '/',
-  authorize('superadmin', 'schooladmin', 'teacher'),
+  authorize('superadmin', 'teacher'),
   [
     body('title').trim().isLength({ min: 1, max: 200 }).withMessage('Title is required (max 200 chars)'),
     body('content').notEmpty().withMessage('Content is required'),
@@ -42,7 +42,7 @@ router.post(
 );
 
 router.get('/:id', getAnnouncementById);
-router.put('/:id', authorize('superadmin', 'schooladmin', 'teacher'), updateAnnouncement);
-router.delete('/:id', authorize('superadmin', 'schooladmin'), deleteAnnouncement);
+router.put('/:id', authorize('superadmin', 'teacher'), updateAnnouncement);
+router.delete('/:id', authorize('superadmin'), deleteAnnouncement);
 
 module.exports = router;

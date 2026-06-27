@@ -27,12 +27,12 @@ router.use(protect);
 
 router.get('/', getFees);
 router.get('/overdue', getOverdueFees);
-router.get('/stats', authorize('superadmin', 'schooladmin'), getFeeStats);
+router.get('/stats', authorize('superadmin'), getFeeStats);
 router.get('/student/:id', getStudentFeeSummary);
 
 router.post(
   '/',
-  authorize('superadmin', 'schooladmin'),
+  authorize('superadmin'),
   [
     body('student').notEmpty().withMessage('Student is required'),
     body('feeType')
@@ -45,7 +45,7 @@ router.post(
   createFee
 );
 
-router.put('/:id', authorize('superadmin', 'schooladmin'), updateFee);
-router.delete('/:id', authorize('superadmin', 'schooladmin'), deleteFee);
+router.put('/:id', authorize('superadmin'), updateFee);
+router.delete('/:id', authorize('superadmin'), deleteFee);
 
 module.exports = router;

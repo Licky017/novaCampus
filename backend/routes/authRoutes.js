@@ -19,9 +19,6 @@ const {
   changePassword,
   forgotPassword,
   resetPassword,
-  createInvite,
-  verifyInvite,
-  acceptInvite,
 } = require('../controllers/authController');
 const { protect } = require('../middleware/authMiddleware');
 const { authorize } = require('../middleware/roleMiddleware');
@@ -35,48 +32,10 @@ router.post(
     body('name').trim().isLength({ min: 2, max: 100 }).withMessage('Name must be 2-100 characters'),
     body('email').isEmail().withMessage('A valid email is required'),
     body('password').isLength({ min: 8 }).withMessage('Password must be at least 8 characters'),
-    body('role').isIn(['superadmin', 'schooladmin', 'teacher', 'student']).withMessage('Invalid role'),
+    body('role').isIn(['superadmin', 'teacher', 'student']).withMessage('Invalid role'),
   ],
   validate,
   register
-);
-
-router.post(
-  '/signup',
-  [
-    body('firstName').trim().isLength({ min: 2, max: 50 }).withMessage('First name must be 2-50 characters'),
-    body('lastName').trim().isLength({ min: 2, max: 50 }).withMessage('Last name must be 2-50 characters'),
-    body('email').isEmail().withMessage('A valid email is required'),
-    body('password').isLength({ min: 8 }).withMessage('Password must be at least 8 characters'),
-    body('confirmPassword').custom((value, { req }) => value === req.body.password).withMessage('Passwords must match'),
-  ],
-  validate,
-  signup
-);
-
-router.post(
-  '/invites',
-  protect,
-  authorize('superadmin', 'schooladmin'),
-  [
-    body('name').trim().isLength({ min: 2, max: 100 }).withMessage('Name must be 2-100 characters'),
-    body('email').isEmail().withMessage('A valid email is required'),
-    body('role').isIn(['schooladmin', 'teacher', 'student']).withMessage('Invalid invite role'),
-  ],
-  validate,
-  createInvite
-);
-
-router.get('/invites/:token', verifyInvite);
-
-router.post(
-  '/invites/:token/accept',
-  [
-    body('password').isLength({ min: 8 }).withMessage('Password must be at least 8 characters'),
-    body('phone').optional().matches(/^[\d+\-\s()]{7,20}$/).withMessage('Please provide a valid phone number'),
-  ],
-  validate,
-  acceptInvite
 );
 
 router.post(
